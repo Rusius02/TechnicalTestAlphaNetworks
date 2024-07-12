@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "video_store"
+  datasource:
+    url:jdbc: h2:mem:video_store
+    driver-class-name: org.h2.Driver
+    username: h2
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+
+custom:
+  max_duration: 14
+  vat : 21.0d
