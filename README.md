@@ -1,4 +1,4 @@
-# Video store technical assesment
+# Video store technical assessment
 
 ## Overview
 
