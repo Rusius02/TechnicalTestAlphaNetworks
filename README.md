@@ -74,4 +74,29 @@ custom:
 
 ### Assessment
 
+**Context:**
 
+Since the opening of my video store in the 90s, I have been managing rentals using a notebook and a pencil. Over time, it has become increasingly difficult to find DVDs/VHS tapes that are already rented out and those that are still in stock. I also do not have the ability to know the return date of my products without having to flip through the pages of previous days/weeks.
+
+**Objective:**
+
+I want a program (REST API) that allows me to manage the rental of my DVDs/VHS, where I could find the following information:
+
+```text
+- Title
+- Category (a category can belong to another category)
+- Release Date
+- Language
+- Type (VHS, DVD)
+- For VHS: format (VHS, S-VHS, S-VHS-C)
+- For DVDs: number of discs per box
+```
+
+**Bonus Features:**
+
+At least one of the following features would be interesting:
+```textmate
+- A client who is more than a week late on their rental return should not be able to make a new rental.
+- If the movie is available in multiple copies, I want to know the number of copies remaining for rental.
+- During my movie search, I should be able to find the name of the movie in any language (e.g., "La mémoire dans la peau" -> "The Bourne Identity").
+```
