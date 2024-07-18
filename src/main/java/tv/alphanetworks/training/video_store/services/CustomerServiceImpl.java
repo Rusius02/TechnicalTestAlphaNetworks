@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
      * @return ResponseEntity containing the registered customer object with HTTP status 200 (OK).
      */
     @Override
-    public CustomerDto register(CustomerDto customerDto) throws Exception {
+    public CustomerDto register(CustomerDto customerDto) throws CustomerExceptions {
         Customer existingCustomer = customerRepository.findByCustomerNumberOrEmail(
                 customerDto.getCustomerNumber(), customerDto.getEmail());
 

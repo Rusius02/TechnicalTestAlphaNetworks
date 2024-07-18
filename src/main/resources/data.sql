@@ -49,7 +49,7 @@ INSERT INTO rental_movie (rental_id, movie_id) VALUES
     (2, 7),
     (2, 8);
 INSERT INTO rental (rental_date, expected_return_date, price, customer_id)
-VALUES ('2024-07-10 10:00:00', '2024-07-17 10:00:00', 9.99, 1);
+VALUES ('2023-07-10 10:00:00', '2023-07-17 10:00:00', 9.99, 1);
 
 INSERT INTO rental_movie (rental_id, movie_id) VALUES
     (4, 9),

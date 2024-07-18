@@ -3,6 +3,7 @@ package tv.alphanetworks.training.video_store.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tv.alphanetworks.training.video_store.dtos.CustomerDto;
+import tv.alphanetworks.training.video_store.exceptions.CustomerExceptions;
 import tv.alphanetworks.training.video_store.services.CustomerService;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class CustomerController {
         return ResponseEntity.ok(this.customerService.getById(id));
     }
     @PostMapping (value = "/register")
-    public ResponseEntity<CustomerDto> register(@RequestBody CustomerDto customer) throws Exception {
+    public ResponseEntity<CustomerDto> register(@RequestBody CustomerDto customer) throws CustomerExceptions {
         return ResponseEntity.ok(this.customerService.register(customer));
     }
     @GetMapping("getCustomerByName/{name}")
