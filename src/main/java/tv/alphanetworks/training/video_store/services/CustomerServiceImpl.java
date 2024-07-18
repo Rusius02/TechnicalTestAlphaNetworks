@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tv.alphanetworks.training.video_store.dtos.CustomerDto;
+import tv.alphanetworks.training.video_store.exceptions.CustomerExceptions;
 import tv.alphanetworks.training.video_store.mappers.ICustomerMapper;
 import tv.alphanetworks.training.video_store.mappers.MyCustomerMapper;
 import tv.alphanetworks.training.video_store.model.Customer;
@@ -44,8 +45,19 @@ public class CustomerServiceImpl implements CustomerService {
      * @return ResponseEntity containing the registered customer object with HTTP status 200 (OK).
      */
     @Override
-    public CustomerDto register(CustomerDto customer) {
-        return MyCustomerMapper.toDto(this.customerRepository.save(MyCustomerMapper.toEntity(customer)));
+    public CustomerDto register(CustomerDto customerDto) throws Exception {
+        Customer existingCustomer = customerRepository.findByCustomerNumberOrEmail(
+                customerDto.getCustomerNumber(), customerDto.getEmail());
+
+        if (existingCustomer != null) {
+            throw new CustomerExceptions("Customer with customer number or email already exists.");
+        }
+
+        // If customer does not exist, save them
+        Customer customerToSave = MyCustomerMapper.toEntity(customerDto);
+        Customer savedCustomer = customerRepository.save(customerToSave);
+
+        return MyCustomerMapper.toDto(savedCustomer);
     }
 
     @Override

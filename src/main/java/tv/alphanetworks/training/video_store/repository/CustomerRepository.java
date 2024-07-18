@@ -19,4 +19,5 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findByName(@Param("name") String name);
     @Query("SELECT c FROM Customer c WHERE c.customerNumber = :customerNumber")
     Customer findByCustomerNumber(@Param("customerNumber") String customerNumber);
+    Customer findByCustomerNumberOrEmail(String customerNumber, String email);
 }

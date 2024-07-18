@@ -12,6 +12,6 @@ public interface CustomerService {
 
     List<CustomerDto> getAll();
     CustomerDto getById(Long id);
-    CustomerDto register(CustomerDto customer);
+    CustomerDto register(CustomerDto customer) throws Exception;
     List<CustomerDto> getByName(String name);
 }
