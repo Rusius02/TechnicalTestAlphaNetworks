@@ -1,6 +1,6 @@
 package tv.alphanetworks.training.video_store.services;
 
-import tv.alphanetworks.training.video_store.model.Customer;
+import tv.alphanetworks.training.video_store.dtos.CustomerDto;
 
 import java.util.List;
 
@@ -10,5 +10,8 @@ import java.util.List;
 
 public interface CustomerService {
 
-    List<Customer> getAll();
+    List<CustomerDto> getAll();
+    CustomerDto getById(Long id);
+    CustomerDto register(CustomerDto customer);
+    List<CustomerDto> getByName(String name);
 }
