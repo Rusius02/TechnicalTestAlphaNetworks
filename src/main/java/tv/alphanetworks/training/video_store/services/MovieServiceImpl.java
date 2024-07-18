@@ -58,7 +58,7 @@ public class MovieServiceImpl  implements MovieService{
                 .orElseThrow(() -> new RuntimeException("Category not found"));
     }
     @Override
-    public List<MovieDto> getByName(String title) {
+    public List<MovieDto> getByTitle(String title) {
         List<Movie> movies =  this.movieRepository.findByTitle(title);
         return MyMovieMapper.toListDto(movies);
     }

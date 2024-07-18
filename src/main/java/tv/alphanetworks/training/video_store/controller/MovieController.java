@@ -57,8 +57,8 @@ public class MovieController {
     }
 
     @GetMapping("getMoviesByName/{name}")
-    public ResponseEntity<List<MovieDto>> getCustomerByName(@PathVariable String name) {
-        List<MovieDto> movies = movieService.getByName(name);
+    public ResponseEntity<List<MovieDto>> getMovieTitle(@PathVariable String title) {
+        List<MovieDto> movies = movieService.getByTitle(title);
         if (movies != null) {
             return ResponseEntity.ok(movies);
         } else {

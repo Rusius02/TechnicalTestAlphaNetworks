@@ -8,7 +8,7 @@ public interface MovieService {
     List<MovieDto> getAll();
     MovieDto getById(Long id);
     MovieDto register(MovieDto movieDto);
-    List<MovieDto> getByName(String name);
+    List<MovieDto> getByTitle(String name);
     List<MovieDto> getAllDVDs();
     List<MovieDto> getAllVHS();
     List<MovieDto> getDuplicateMovies();
